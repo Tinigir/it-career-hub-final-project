@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meetup</title>
+    <link rel="stylesheet" href="/CSS/header.css" />
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/icons.css" />
+    <link rel="stylesheet" href="/CSS/utils.css" />
+    <link rel="stylesheet" href="/CSS/footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="hero-text">
+          <h1>The people platform — Where interests become friendships</h1>
+          <p class="hero-discription">
+            Whatever your interest, from hiking and reading to networking and
+            skill sharing, there are thousands of people who share it on Meetup.
+            Events are happening every day—sign up to join the fun.
+          </p>
+          <a
+            class="hidden-mobile"
+            id="joinMeetingLink"
+            href="search-events-page/search-events-page.html"
+            >Join Meetup</a>
+        </div>
+        <div class="hero-image">
+          <img src="IMG/hero-illustration.svg" alt="Hero Image" />
+        </div>
+      </section>
+
+      <section class="events">
+        <div>
+			<div class="events-title-grupp">
+				<div class="events-title">
+					<h2 class="event-title-h2">Events near</h2>
+				  <div class="events-title-input">
+					  <p>Mountain View, CA</p>
+					  <img src="IMG/event-pen.svg" alt="pen" />
+				  </div>
+				</div>
+				<a class="events-title-link hidden-mobile" href="#">See all events</a>
+			</div>
+        </div>
+        <div id="cards-event-list" class="event-list"></div>
+      </section>
+
+      <section class="upcoming-events">
+		<div class="upcoming-events-title">
+			<h2 class="upcoming-events-title-h2">Upcoming online events</h2>
+			<a class="upcoming-events-link hidden-mobile" href="#">See all events</a>
+		</div>
+        <div id="cards-upcomming-event-list" class="event-list"></div>
+      </section>
+
+      <section class="join-meetup">
+        <div class="join-meetup-info">
+          <h2 class="hidden-mobile">Join Meetup</h2>
+          <p>
+            People use Meetup to meet new people, learn new things, find
+            support, get out of their comfort zones, and pursue their passions,
+            together. Membership is free.
+          </p>
+          <button class="sign-up-btn">Sign up</button>
+        </div>
+        <div class="join-meetup-image">
+          <img  src="IMG/Join-Meetup.png" alt="" />
+        </div>
+        <h2 class="shown-mobile">Join Meetup</h2>
+      </section>
+
+      <section class="categories">
+        <h2>Explore top categories</h2>
+        <div class="category-list">
+          <div class="category">
+            <img src="IMG/categorie-1.svg" alt="Travel" />
+            Travel and Outdoor
+          </div>
+          <div class="category">
+            <img src="IMG/categorie-2.svg" alt="Social" />
+            Social Activities
+          </div>
+          <div class="category">
+            <img src="IMG/categorie-3.svg" alt="Hobbies" />
+            Hobbies and Passions
+          </div>
+          <div class="category">
+            <img src="IMG/categorie-4.svg" alt="Sports" />
+            Sports and Fitness
+          </div>
+          <div class="category">
+            <img src="IMG/categorie-5.svg" alt="Health" />
+            Health and Wellbeing
+          </div>
+          <div class="category">
+            <img src="IMG/categorie-6.svg" alt="Technology" />
+            Technology
+          </div>
+          <div class="category">
+            <img src="IMG/categorie-7.svg" alt="Art" />
+            Art and Culture
+          </div>
+          <div class="category">
+            <img src="IMG/categorie-8.svg" alt="Games" />
+            Games
+          </div>
+        </div>
+      </section>
+
+      <section class="cities">
+        <h2>Popular cities on Meetup</h2>
+        <p>
+          Looking for fun things to do near you? See what Meetup organizers are
+          planning in cities around the country.
+        </p>
+        <div class="city-list">
+          <a
+            href="search-events-page/search-events-page.html?location=New%20York"
+            class="city"
+          >
+            <img class="city-image" src="IMG/new-york.png" alt="New York" />
+            <p>New York</p>
+          </a>
+          <div class="city">
+            <img class="city-image" src="IMG/san-francisco.png" alt="San Francisco" />
+            <p>San Francisco</p>
+          </div>
+          <div class="city">
+            <img class="city-image" src="IMG/chicago.png" alt="Chicago" />
+            <p>Chicago</p>
+          </div>
+          <div class="city">
+            <img class="city-image" src="IMG/nashville.png" alt="Nashville" />
+            <p>Nashville</p>
+          </div>
+          <div class="city">
+            <img class="city-image" src="IMG/miami.png" alt="Miami" />
+            <p>Miami</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-it-works">
+        <h2>How Meetup works</h2>
+        <div class="steps">
+          <div class="step">
+            <div>
+              <i class="icon ic-color-biruza ic-search"></i>
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Discover events and groups</h3>
+              <p class="step-discription">See who's hosting local events for all the things you love</p>
+              <a class="step-link" href="#">Search events and groups</a>
+            </div>
+          </div>
+
+          <!-- Шаг 2: Start a group to host events -->
+          <div class="step">
+            <div>
+              <i class="icon ic-plus ic-color-biruza"></i>
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Start a group to host events</h3>
+              <p class="step-discription">
+                Create your own Meetup group, and draw from a community of
+                millions
+              </p>
+              <a class="step-link" href="#">Start a group</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="friendships">
+        <h2>Friendships are made on Meetup</h2>
+        <p>
+          Since 2002, members have used Meetup to make new friends, meet
+          like-minded people, spend time on hobbies, and connect with locals
+          over shared interests. Learn how.
+        </p>
+
+        <div id="my-card-list" class="friendship-cards">
+          <!-- Данные запорлняются в JS -->
+        </div>
+      </section>
+    </main>
+
+
+    <script src="elements/header.js"></script>
+    <script src="elements/footer.js"></script>
+    <script type="module" src="main-page.js"></script>
+  </body>
+</html>

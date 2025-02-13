@@ -1,0 +1,147 @@
+/* Header */
+.header {
+	background-color: #fff;
+	padding: 10px 40px;
+	border-bottom: 1px solid #ddd;
+  }
+  
+  nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  }
+  
+  .logo-search {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+  }
+  
+  .logo img {
+	height: 30px;
+  }
+  
+  .search-bar {
+	display: flex;
+  }
+  
+  .search-input-wrapper {
+	display: flex;
+	align-items: center;
+	width: 300px;
+	padding-left: 10px;
+	border: 1px solid #d9d9d9;
+	border-radius: 8px 0 0 8px;
+  
+	.search-input {
+	  border: none;
+	  font-size: 16px;
+	  color: #707070;
+	  outline: none;
+	}
+  }
+  
+  .search-bar {
+	.location {
+	  display: flex;
+	  align-items: center;
+	  border: none;
+	  font-weight: 400;
+	  font-size: 16px;
+	  padding-left: 17px;
+	  border: 1px solid #d9d9d9;
+	  width: 254px;
+	  height: 42px;
+	  outline: none;
+	}
+  
+	.search-button {
+	  padding: 8px;
+	  background-color: #f65858;
+	  border: none;
+	  width: 42px;
+	  border-radius: 0 8px 8px 0;
+	  cursor: pointer;
+	}
+  }
+  
+  /* Панель авторизации */
+  .user-auth {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	order: 3;
+  
+	button {
+	  font-size: 14px;
+	  font-weight: 500;
+	  padding: 10px 20px;
+	  background-color: transparent;
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+  
+	  &.log-in {
+		color: #212121;
+	  }
+  
+	  &:hover {
+		background-color: #024941;
+		color: white;
+	  }
+	}
+  
+	.active {
+	  background-color: #00796b;
+	  color: white;
+	}
+  
+	.language {
+	  display: flex;
+	  align-items: center;
+	  gap: 4px;
+	  font-size: 14px;
+	  font-weight: 500;
+	  color: #212121;
+	}
+  }
+  
+  @media (max-width: 700px) {
+	#search-location-input {
+	  display: none;
+	}
+  
+	.user-auth {
+	  .language {
+		font-size: 12px;
+	  }
+  
+	  button {
+		font-size: 12px;
+	  }
+	}
+  
+	.header {
+	  padding: 10px;
+	}
+  
+	nav {
+	  flex-wrap: wrap;
+	}
+  
+	.user-auth {
+	  gap: 8px;
+	  order: 2;
+	}
+  
+	.search-bar {
+	  margin-top: 15px;
+	  width: 100%;
+	  order: 3;
+  
+	  .search-input-wrapper {
+		width: 100%;
+	  }
+	}
+  }
+  

@@ -1,0 +1,164 @@
+/* Footer */
+footer {
+	background-color: #212121;
+	color: #fff;
+	padding: 40px 196px;
+	text-align: center;
+  }
+  
+  /* Контейнер для всех секций в футере */
+  .footer-container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 40px;
+  }
+  
+
+  .footer-create-group {
+	display: flex;
+	gap: 30px;
+	justify-content: left;
+	align-items: center;
+	
+	text-align: left;
+	margin-bottom: 20px;
+  }
+  
+  .footer-create-group p {
+	font-size: 16px;
+	font-weight: 600;
+  }
+  
+  .footer-create-group button {
+	padding: 10px 14px;
+	font-size: 16px;
+	font-weight: 600;
+	background-color: #212121;
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .gray-line {
+	border-top: 2px solid #707070;
+	width: 100%;
+  }
+  
+  .footer-create-group button:hover {
+	background-color: #fff;
+	color: #212121;
+  }
+  
+  /* Секции с ссылками ("Your Account", "Discover", "Meetup") */
+  .footer-links {
+	flex: 1;
+	text-align: left;
+  }
+  
+  .footer-links h3 {
+	font-size: 16px;
+	font-weight: 400;
+	color: #f6f7f8;
+	margin-bottom: 7px;
+  }
+  
+  .footer-links ul {
+	list-style-type: none;
+	padding: 0;
+  }
+  
+  .footer-links ul li {
+	margin-bottom: 7px;
+  }
+  
+  .footer-links a {
+	color: #c5c4c4;
+	font-size: 14px;
+	font-weight: 400;
+	text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+	text-decoration: underline;
+  }
+  
+  /* Секция социальных сетей */
+  .footer-social {
+	display: flex;
+	justify-content: space-between;
+	flex: 1;
+	text-align: center;
+	min-width: 250px;
+	margin-top: 20px;
+  }
+  
+  .footer-social .social-icons {
+	text-align: left;
+	font-size: 16px;
+	font-weight: 400;
+	margin-bottom: 20px;
+  }
+  
+  .footer-social .social-icons img {
+	margin: 12px 32px 24px 0;
+	text-decoration: none;
+  }
+  
+  /* Секция ссылками */
+  .footer-links-group{
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	width: 100%;
+  }
+  .footer-policy ul {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 20px;
+  }
+  
+  .footer-policy ul li {
+	display: inline-block;
+	margin: 0 10px;
+  }
+  
+  /* Секция с кнопками для скачивания приложений */
+  .footer-apps img {
+	text-align: center;
+	margin-top: 25px;
+  }
+  /* Copyright */
+  
+  .copyright {
+	display: flex;
+  }
+  
+  .footer-bottom p {
+	font-size: 14px;
+  }
+  
+  .footer-policy {
+	font-size: 14px;
+	color: #c5c4c4;
+  }
+
+  @media (max-width:700px){
+	footer{
+		padding: 10px;
+		
+	}
+	.footer-social{
+		flex-wrap: wrap;
+	}
+	.footer-app{
+		display: none !important;
+	}
+	.join-meetup-image{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+	}
+  }

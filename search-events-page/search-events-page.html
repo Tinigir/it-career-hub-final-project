@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meetup</title>
+    <link rel="stylesheet" href="../CSS/header.css" />
+    <link rel="stylesheet" href="../CSS/style.css" />
+    <link rel="stylesheet" href="../CSS/icons.css" />
+    <link rel="stylesheet" href="../CSS/utils.css" />
+    <link rel="stylesheet" href="../CSS/footer.css" />
+    <link rel="stylesheet" href="search-events-page.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+		<div class="main-info-container">
+			<div class="events-location-container">
+				<h2 class="events-location-title">Events near New York, NY</h2>
+				<p class="events-location-subtitle">Events</p>
+			  </div>
+			  <div class="map-container hidden-mobile">
+				<p class="map-description">Find events near</p>
+				<h3 class="map-title">New York, NY</h3>
+				<p class="map-text"></p>
+				<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d136870.5117944568!2d-74.11635782731362!3d40.708338336415416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%20City%2C%20New%20York%2C%20USA!5e0!3m2!1sde!2sde!4v1739455293230!5m2!1sde!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+				</iframe>
+			  </div>
+		</div>
+
+      <div id="filter-container" class="filter-container"></div>
+      <div id="cards-upcomming-event-list"></div>
+
+      <div id="cards-event-filter"></div>
+    </main>
+
+    <script src="../elements/header.js"></script>
+    <script src="../elements/footer.js"></script>
+
+    <script type="module" src="search-event-page.js"></script>
+    <script src="../constants/drop-function.js"></script>
+  </body>
+</html>

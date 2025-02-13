@@ -1,0 +1,57 @@
+:root {
+	--icon-size-default: 20px;
+  }
+  
+  .icon {
+	background-color: black;
+	display: inline-block;
+	vertical-align: middle;
+	height: var(--icon-size-default);
+	width: var(--icon-size-default);
+  
+	&.ic-color-white {
+	  background-color: white;
+	}
+  
+	&.ic-color-gray {
+	  background-color: gray;
+	}
+  
+	&.ic-color-biruza {
+	  width: 25px;
+	  height: 25px;
+	  background-color: #008294;
+	}
+  
+	&.ic-search {
+	  @include mask-icon("../IMG/search-icon.svg");
+	}
+  
+	&.ic-calendar {
+	  @include mask-icon("../IMG/icon-calendar.svg");
+	}
+  
+	&.ic-check {
+	  @include mask-icon("../IMG/icon-check.svg");
+	}
+  
+	&.ic-ticket {
+	  @include mask-icon("../IMG/icon-ticket.svg");
+	}
+  
+	&.ic-plus {
+	  @include mask-icon("../IMG/plus-icon-blue.svg");
+	}
+  }
+  
+  // Миксин для повторяющегося кода масок
+  @mixin mask-icon($url) {
+	mask: url($url);
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+  }
+  

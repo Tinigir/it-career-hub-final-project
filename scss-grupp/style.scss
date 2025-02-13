@@ -1,0 +1,304 @@
+/* Общие стили */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  }
+  
+  body {
+	font-family: "Roboto", serif;
+	line-height: 1.6;
+	background-color: #ffffff;
+  }
+  
+  a {
+	text-decoration: none;
+	color: inherit;
+  }
+  
+  img {
+	max-width: 100%;
+  }
+  
+  main {
+	max-width: 5000px;
+	margin: 0 158px;
+  }
+  
+  /* Hero Section */
+  .hero {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 60px 20px;
+	background-color: #ffffff;
+  
+	&-text {
+	  flex: 1;
+  
+	  h1 {
+		font-size: 42px;
+		font-weight: 700;
+		color: #212121;
+		margin-bottom: 20px;
+	  }
+  
+	  .hero-discription {
+		font-size: 16px;
+		color: #212121;
+		margin-bottom: 20px;
+	  }
+  
+	  a {
+		font-size: 16px;
+		padding: 12px 30px;
+		background-color: #00798a;
+		color: #fff;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+	  }
+	}
+  
+	&-image {
+	  flex: 1;
+  
+	  img {
+		width: 100%;
+		object-fit: cover;
+	  }
+	}
+  }
+  
+  /* Events Section */
+  .events {
+	padding: 40px 20px;
+	background-color: #fff;
+  
+	&-title-grupp,
+	&-title {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	  margin-bottom: 20px;
+	}
+  
+	&-title-input {
+	  display: flex;
+	  gap: 8px;
+	  margin-left: 20px;
+	  padding: 10px;
+	  border: none;
+	  border-radius: 8px;
+	  font-weight: 600;
+	  color: #00798a;
+	  background-color: rgba(151, 202, 209, 0.08);
+	}
+  
+	&-title-link {
+	  font-weight: 500;
+	  color: #00798a;
+	}
+  
+	&-title-h2 {
+	  font-size: 28px;
+	}
+  }
+  
+  .event-list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+  }
+  
+  .event {
+	img {
+	  width: 100%;
+	  height: 200px;
+	  object-fit: cover;
+	  border-radius: 8px;
+	}
+  
+	&-info-element {
+	  display: flex;
+	  justify-content: left;
+	  align-items: center;
+	  gap: 6px;
+	  font-size: 16px;
+	}
+  
+	&-title {
+	  text-align: left;
+	  font-size: 18px;
+	  font-weight: bold;
+	  color: #333;
+	}
+  
+	&-category {
+	  text-align: left;
+	  font-size: 14px;
+	  color: #777;
+	  margin-top: 5px;
+	}
+  
+	&-date {
+	  text-transform: uppercase;
+	  font-size: 14px;
+	  color: #212121;
+	}
+  }
+  
+  /* Join Meetup Section */
+  .join-meetup {
+	display: flex;
+	text-align: left;
+	padding: 40px 56px;
+	background-color: rgba(151, 202, 209, 0.08);
+  
+	h2 {
+	  font-size: 28px;
+	  margin-bottom: 20px;
+	  font-weight: 600;
+	}
+  
+	p {
+	  font-size: 18px;
+	  color: #212121;
+	  font-weight: 400;
+	  margin-bottom: 20px;
+	}
+  
+	.sign-up-btn {
+	  padding: 12px 60px;
+	  background-color: #e32359;
+	  color: white;
+	  font-weight: 500;
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+  
+	  &:hover {
+		background-color: #a30935;
+	  }
+	}
+  }
+  
+  /* How Meetup Works Section */
+  .how-it-works {
+	padding: 40px 20px;
+	background-color: #fff;
+	text-align: left;
+  
+	h2 {
+	  font-size: 28px;
+	  margin-bottom: 20px;
+	  color: #212121;
+	}
+  
+	.steps {
+	  display: flex;
+	  justify-content: space-between;
+	  gap: 20px;
+	  flex-wrap: wrap;
+	}
+  
+	.step {
+	  background-color: rgba(151, 202, 209, 0.08);
+	  padding: 32px 112px 24px 24px;
+	  border-radius: 10px;
+	  display: flex;
+	  align-items: left;
+	  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+	  &-title {
+		font-size: 20px;
+		font-weight: 600;
+		color: #212121;
+		margin-bottom: 16px;
+	  }
+  
+	  &-discription {
+		font-size: 16px;
+		font-weight: 400;
+		color: #212121;
+		margin-bottom: 16px;
+	  }
+  
+	  &-link {
+		font-size: 16px;
+		font-weight: 500;
+		color: #00798a;
+		text-decoration: none;
+  
+		&:hover {
+		  text-decoration: underline;
+		}
+	  }
+	}
+  }
+  
+  /* Media Queries */
+  @media (max-width: 700px) {
+	main {
+	  margin: 0;
+	  padding: 10px;
+	}
+  
+	.hero {
+	  display: block;
+  
+	  &-text {
+		font-size: 25px;
+  
+		.hero-discription {
+		  font-size: 12px;
+		}
+	  }
+	}
+  
+	.join-meetup {
+	  padding: 40px 0;
+	  flex-wrap: wrap-reverse;
+	}
+  
+	.event-list {
+	  grid-template-columns: 1fr;
+	}
+  
+	.event {
+	  padding: 10px 0;
+	  border-top: 1px solid #707070;
+  
+	  &-title-h2 {
+		font-size: 20px;
+	  }
+	}
+  
+	.upcoming-events-title-h2 {
+	  font-size: 20px;
+	}
+  
+	.join-meetup .sign-up-btn {
+	  display: block;
+	  margin: auto;
+	}
+  
+	.step {
+	  padding: 10px 60px 10px 10px;
+  
+	  &-title {
+		font-size: 12px;
+		margin-bottom: 10px;
+	  }
+  
+	  &-discription {
+		font-size: 10px;
+		margin-bottom: 10px;
+	  }
+  
+	  &-link {
+		font-size: 10px;
+	  }
+	}
+  }
+  

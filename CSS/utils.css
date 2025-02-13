@@ -1,0 +1,13 @@
+.shown-mobile {
+	display: none !important;
+  }
+
+  @media (max-width: 393px) {
+	.shown-mobile {
+	  display: revert !important;
+	}
+  
+	.hidden-mobile {
+	  display: none !important;
+	}
+  }
