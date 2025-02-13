@@ -20,7 +20,7 @@ function fillHeader() {
 		<div class="search-bar">
 		  <div class="search-input-wrapper">
 			<i class="icon ic-search ic-color-gray"></i>
-			<input class="search-input" type="text" placeholder="Search events" />
+			<input id="search-filter" class="search-input" type="text" placeholder="Search events" />
 		  </div>
 	  
 		  <form id="search-location-form" style="display: contents">

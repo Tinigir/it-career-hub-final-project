@@ -5,11 +5,6 @@ const filterState = {
   category: "any",
   date: "",
 };
-// import { upcommingEvents, fillUpcoomingEvents } from 'uncomming-events-cards-data.js';
-
-// fillUpcoomingEvents('cards-upcomming-event-list', upcommingEvents);
-
-
 
 function drawFilterElement() {
   const myOptionList = [
@@ -153,14 +148,21 @@ function drawFilterElement() {
     },
   ];
 
-  const datesOptions = [{ label: 'All Dates', value: ''}, ...eventsStore.map((eventData) => ({label:eventData.date.toISOString().split('T')[0], value:eventData.date}))];
-
+  const datesOptions = [
+    { label: "All Dates", value: "" },
+    ...eventsStore.map((eventData) => ({
+      label: eventData.date.toISOString().split("T")[0],
+      value: eventData.date,
+    })),
+  ];
 
   function getSelectOption(optionList, filterKey) {
-	const selectLabel = document.createElement('label');
-	selectLabel.classList.add('filter-select-wrapper')
+    const selectLabel = document.createElement("label");
+    selectLabel.classList.add("filter-select-wrapper");
+
     const select = document.createElement("select");
-	select.classList.add("filter-select");
+
+    select.classList.add("filter-select");
     select.addEventListener("change", (event) => {
       filterState[filterKey] = event.target.value;
       applyFilters();
@@ -172,49 +174,72 @@ function drawFilterElement() {
       optionElement.value = option.value;
       select.appendChild(optionElement);
     });
-	selectLabel.appendChild(select);
+
+    selectLabel.appendChild(select);
     return selectLabel;
   }
 
   const filterContainer = document.getElementById("filter-container");
   filterContainer.appendChild(getSelectOption(myOptionList, "type"));
   filterContainer.appendChild(getSelectOption(myDistansOptionList, "distance"));
-  filterContainer.appendChild(getSelectOption(myCategoryOptionList, "category"));
+  filterContainer.appendChild(
+    getSelectOption(myCategoryOptionList, "category")
+  );
   filterContainer.appendChild(getSelectOption(datesOptions, "date"));
+
+  const searchInputElement = document.getElementById("search-filter");
+  searchInputElement.addEventListener("input", (event) => {
+    filterState["search"] = (event.target.value ?? "").trim().toLowerCase();
+    applyFilters();
+  });
 }
+
 function applyFilters() {
   const filteredEvents = eventsStore
-    .filter((eventData) => filterState.category == "any" || eventData.category == filterState.category)
-    .filter((eventData) => filterState.distance == "any" || eventData.distance == filterState.distance)
-    .filter((eventData) => filterState.type == "any" || eventData.type == filterState.type)
-	.filter((eventData) => !filterState.date || eventData.date == filterState.date);
-
+    .filter(
+      (eventData) =>
+        filterState.category == "any" ||
+        eventData.category == filterState.category
+    )
+    .filter(
+      (eventData) =>
+        filterState.distance == "any" ||
+        eventData.distance == filterState.distance
+    )
+    .filter(
+      (eventData) =>
+        filterState.type == "any" || eventData.type == filterState.type
+    )
+    .filter(
+      (eventData) => !filterState.date || eventData.date == filterState.date
+    )
+	.filter((eventData) => !filterState.search || eventData.title.toLowerCase().includes(filterState.search) || eventData.description.toLowerCase().includes(filterState.search)
+)
   drowCards(filteredEvents);
 }
 
-function getCardsEvent(cardData){
-	const formatedDate = formatDate(cardData.date)
-	return `
+function getEventCard(cardData) {
+  const formatedDate = formatDate(cardData.date);
+  return `
 		<img src="${cardData.image}" alt="" />
 		<div class="event-info">
 			<p class = "event-date">${formatedDate}<p>
 			<h3 class = "event-title">${cardData.title}</h3>
 			<p class = "event-text-categoty">${cardData.category} (${cardData.distance} km)</p>
 		</div>
-	`
-
+	`;
 }
 
 function drowCards(cardsData) {
-	const cardsEventFilter = document.getElementById('cards-event-filter');
-	cardsEventFilter.innerHTML = '';
+  const cardsEventFilter = document.getElementById("cards-event-filter");
+  cardsEventFilter.innerHTML = "";
 
-	cardsData.forEach((cardData) => {
-		const card = document.createElement('div');
-		card.classList.add("event-card");
-		card.innerHTML = getCardsEvent(cardData);
-		cardsEventFilter.appendChild(card);
-	})
+  cardsData.forEach((cardData) => {
+    const card = document.createElement("div");
+    card.classList.add("event-card");
+    card.innerHTML = getEventCard(cardData);
+    cardsEventFilter.appendChild(card);
+  });
 }
 
 const eventsStore = [
@@ -288,12 +313,30 @@ drawFilterElement();
 applyFilters();
 
 function formatDate(date) {
-    const weekDayName = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][date.getDay()];
-    const monthName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][date.getMonth()];
-    const isPm = date.getUTCHours() >= 12;
-    const hours = date.getUTCHours() - (isPm ? 12 : 0);
-    const minutes = date.getMinutes() > 9 ? date.getMinutes().toString() : `0${date.getMinutes()}`;
-    const dayPartName = isPm ? 'PM' : 'AM';
+  const weekDayName = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][
+    date.getDay()
+  ];
+  const monthName = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ][date.getMonth()];
+  const isPm = date.getUTCHours() >= 12;
+  const hours = date.getUTCHours() - (isPm ? 12 : 0);
+  const minutes =
+    date.getMinutes() > 9
+      ? date.getMinutes().toString()
+      : `0${date.getMinutes()}`;
+  const dayPartName = isPm ? "PM" : "AM";
 
-    return `${weekDayName}, ${monthName} ${date.getDate()} - ${hours}:${minutes} ${dayPartName} UTC`;
+  return `${weekDayName}, ${monthName} ${date.getDate()} - ${hours}:${minutes} ${dayPartName} UTC`;
 }
